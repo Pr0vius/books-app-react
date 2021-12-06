@@ -1,0 +1,30 @@
+.book__header {
+  margin-top: 4rem;
+  padding: 0 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.book__header-info {
+  width: 100%;
+}
+.book__header .book__header-title {
+  margin: 0 0  0.1rem 0;
+  color: var(--text-color);
+  text-align: center;
+}
+.book__header-li.author {
+  font-style: italic;
+}
+.book__header-ul {
+  color: var(--text-color-light);
+  list-style-type: none;
+  padding: 0;
+}
+.book__header-li {
+  text-align: start;
+  margin-bottom: .2rem;
+}
+

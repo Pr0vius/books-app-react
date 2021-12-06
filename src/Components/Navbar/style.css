@@ -1,0 +1,28 @@
+.navbar {
+  padding: 1rem;
+  margin-left: 1rem;
+}
+.navbar__ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.navbar__li > a {
+  text-decoration: none;
+  color: var(--text-color-light);
+  font-size: 1.4rem;
+  display: flex;
+  padding: 0.5rem 0;
+  width: 100%;
+  transition: color .2s;
+  gap: .5rem;
+  align-items: center;
+}
+.navbar__li > a:hover {
+  color: var(--text-color);
+}
+
+@media screen and (min-width: 1024px) {
+}

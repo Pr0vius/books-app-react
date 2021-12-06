@@ -1,0 +1,30 @@
+.search {
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 1rem auto;
+  max-width: 50rem;
+  background: var(--main-purple);
+  background: var(--moz-gradient-color);
+  background: var(--wk-gradient-color);
+  background: var(--wk-gradient-color);
+}
+.search__container {
+  margin: 2px;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.search__input {
+  border: none;
+  padding: 1rem 0.5rem;
+  outline: none;
+  width: 100%;
+  color: var(--text-color);
+}
+.search__submit {
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+}

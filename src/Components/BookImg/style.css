@@ -1,0 +1,29 @@
+.image-container {
+  width: 8rem;
+  height: 12.75rem;
+  border-radius: .3rem;
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-color-light);
+}
+.book-card__image {
+  width: 8rem;
+  height: 12.75rem;
+  object-fit: cover;
+  border-radius: .3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .image-container {
+    width: calc(8rem * 1.25);
+    height: calc(12.75rem * 1.25);
+  }
+  .book-card__image {
+    width: calc(8rem * 1.25);
+    height: calc(12.75rem * 1.25);
+  }
+}

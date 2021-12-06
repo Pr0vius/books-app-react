@@ -1,0 +1,23 @@
+.logout_btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.3rem;
+  color: #444;
+  transition: color 0.2s, filter .2s;
+}
+
+.logout_btn:hover {
+  color: #b33939;
+  -webkit-filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.7));
+}
+
+@media screen and (min-width: 768px) {
+
+}
+@media screen and (min-width: 992px) {
+  
+}

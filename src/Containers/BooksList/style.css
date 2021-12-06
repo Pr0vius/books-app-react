@@ -1,0 +1,21 @@
+.booklist{
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.booklist_title{
+  color: var(--text-color);
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .booklist{
+    justify-content: unset;
+  }
+  .booklist_title{
+    text-align: start;
+  }
+}
+@media screen and (min-width: 992px) {
+}

@@ -1,0 +1,17 @@
+.nav-user {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  justify-self: flex-end;
+}
+.nav-user__container {
+  display: flex;
+  gap: 10px;
+}
+.nav-user__img {
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid #a55eea;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
