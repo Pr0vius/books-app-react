@@ -7,11 +7,17 @@
   align-items: center;
   width: 100%;
 }
+.tn-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
 .book__header-info {
   width: 100%;
 }
-.book__header .book__header-title {
-  margin: 0 0  0.1rem 0;
+.book__header-title {
+  margin: 0 0 0.1rem 0;
   color: var(--text-color);
   text-align: center;
 }
@@ -25,6 +31,18 @@
 }
 .book__header-li {
   text-align: start;
-  margin-bottom: .2rem;
+  margin-bottom: 0.2rem;
 }
 
+@media screen and (min-width: 768px) {
+  .book__header .book__header-title {
+    text-align: start;
+  }
+  .book__header {
+    flex-direction: row;
+  }
+  /* .book__header > .image-container,
+  .book__header > .image-container > .book-card__image {
+    width: 15rem !important;
+  } */
+}

@@ -1,25 +1,31 @@
 import React from "react";
 import BookCard from "../../Components/BookCard";
+import ScreenMessage from "../../Components/ScreenMessage";
+import Spinner from "../../Components/Spinner";
 import useFetch from "../../hooks/useFetch";
 import "./style.css";
 
 const BookList = ({ bookshelve, listName, noDataMsg = true, query }) => {
-  const { books } = useFetch(bookshelve, query);
-  
+  const { books, isLoading } = useFetch(bookshelve, query);
+
   const noDataMessage = {
-    FAVORITES: "No results",
-    PURCHASED: "No results",
-    TOREAD: "No results",
-    READING: "No results",
-    FINISHED: "No results",
-    REVIEWED: "No results",
-    RECENTS: "No results",
-    EBOOKS: "No results",
+    FAVORITES: "You haven't favorite books",
+    PURCHASED: "You haven't purchased books",
+    TOREAD: "You haven't pending books",
+    READING: "You haven't current reading books",
+    FINISHED: "You haven't purchased books",
+    REVIEWED: "You haven't reviewed books",
+    RECENTS: "You haven't recent viewed books",
+    EBOOKS: "You haven't purchased e-books",
     RECOMENDATIONS: "",
-    SEARCH: "No results for",
+    SEARCH: `No results for ${query}`,
   };
 
-  return books.length > 0 ? (
+  return isLoading ? (
+    <div style={{ display: "flex", justifyContent: "center",alignItems:'center', height: '100%'}}>
+      <Spinner />
+    </div>
+  ) : books.length > 0 ? (
     <>
       {listName ? <h2 className="booklist_title">{listName}</h2> : null}
       <div className="booklist">
@@ -38,7 +44,7 @@ const BookList = ({ bookshelve, listName, noDataMsg = true, query }) => {
       </div>
     </>
   ) : noDataMsg ? (
-    noDataMessage[bookshelve]
+    <ScreenMessage message={noDataMessage[bookshelve]} />
   ) : null;
 };
 

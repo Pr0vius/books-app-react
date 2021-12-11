@@ -1,0 +1,6 @@
+.pendingButton{
+  font-size: 2rem;
+}
+.pendingButton:hover {
+  color: cadetblue;
+}

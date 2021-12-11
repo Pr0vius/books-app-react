@@ -22,8 +22,8 @@ const Sidebar = () => {
       <div className={`sidebar${active ? " active" : ""}`}>
         <div className="sidebar__container">
           <h2 className="sidebar__title">BooksApp</h2>
-          <Navbar clickHandler={handleClick}/>
-          <NavUser />
+          <Navbar clickHandler={handleClick} />
+          <NavUser onLogin={handleClick} />
         </div>
       </div>
     </>

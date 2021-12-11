@@ -1,7 +1,7 @@
 .image-container {
   width: 8rem;
   height: 12.75rem;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   overflow: hidden;
   background-color: #fff;
   display: flex;
@@ -14,16 +14,13 @@
   width: 8rem;
   height: 12.75rem;
   object-fit: cover;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
 }
 
 @media screen and (min-width: 768px) {
-  .image-container {
-    width: calc(8rem * 1.25);
-    height: calc(12.75rem * 1.25);
-  }
+  .image-container,
   .book-card__image {
-    width: calc(8rem * 1.25);
+    width: calc(8.4rem * 1.25);
     height: calc(12.75rem * 1.25);
   }
 }

@@ -1,0 +1,18 @@
+.bsBtnCont {
+  display: flex;
+  gap: .5rem;
+}
+.bsBtnCont > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--text-color-light);
+  border: none;
+}
+.bsBtnCont > button:hover {
+  cursor: pointer;
+}
+.bsBtnCont > button.remove:hover {
+  color: brown;
+}

@@ -22,7 +22,7 @@ const Book = () => {
       setLoading(false);
     });
   }, [id, user]);
-
+  console.log(book)
   return (
     <>
       {loading ? (
@@ -39,13 +39,17 @@ const Book = () => {
             author={book.volumeInfo.authors[0]}
             rating={book.volumeInfo.averageRating}
             pages={book.volumeInfo.pageCount}
+            id={id}
+            categories={book.volumeInfo.categories}
           />
 
           <div>
             <h3>Description</h3>
             <div className="book_description-container">
               <p
-                dangerouslySetInnerHTML={{ __html: book.volumeInfo.description }}
+                dangerouslySetInnerHTML={{
+                  __html: book.volumeInfo.description || `No Description Available`,
+                }}
                 className="book_description-p"
               />
             </div>

@@ -7,6 +7,7 @@ import {
   FaCheckCircle,
   FaHeart,
   FaHome,
+  FaListUl,
 } from "react-icons/fa";
 import "./style.css";
 
@@ -35,6 +36,12 @@ const Navbar = ({ clickHandler }) => {
       icon: FaBookReader,
       path: "/purchased",
       name: "Purchased",
+    },
+    {
+      id: "57mlRDuQVm",
+      icon: FaListUl,
+      path: "/pendings",
+      name: "Pending",
     },
     {
       id: "Z4Q7AwbP9l",

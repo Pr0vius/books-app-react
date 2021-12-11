@@ -3,7 +3,7 @@ import GoogleLogin from "react-google-login";
 import { google } from "../../config";
 import { userContext } from "../../context/user";
 
-const LoginButton = () => {
+const LoginButton = ({onLogin}) => {
   const { setUser } = useContext(userContext);
 
   const responseLogin = res => {
@@ -17,14 +17,18 @@ const LoginButton = () => {
       tokenId: res.tokenId,
       accessToken: res.accessToken,
     });
+    onLogin();
   };
   return (
     <GoogleLogin
       buttonText="Login with Google"
       onSuccess={responseLogin}
-      onFailure={() => alert("Login Failed")}
       clientId={google.clientId}
       isSignedIn={true}
+      onFailure={e => console.log(e)}
+      scope="https://www.googleapis.com/auth/books"
+      // cookiePolicy="same-origin-allow-popups"
+      // hostedDomain="https://briandelgado00.000webhostapp.com/"
       
     />
   );

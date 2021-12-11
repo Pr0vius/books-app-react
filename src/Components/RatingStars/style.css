@@ -2,3 +2,8 @@
   color: var(--text-color-light);
   text-align: center;
 }
+@media screen and (min-width: 768px) {
+  .stars_container {
+  text-align: start;
+  }
+}

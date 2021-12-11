@@ -10,6 +10,8 @@ import "./style.css";
 import Purchased from "../Pages/Purchased";
 import SearchPage from "../Pages/SearchPage";
 import Book from "../Pages/Book";
+import Pending from "../Pages/Pending";
+import Private from "../Containers/PrivateRoute";
 
 function App() {
   return (
@@ -18,15 +20,16 @@ function App() {
         <Routes>
           <Route path="/">
             <Route index element={<Home />} />
-            <Route path="favorites" element={<Favorites />} />
-            <Route path="purchased" element={<Purchased />} />
-            <Route path="reading" element={<Reading />} />
-            <Route path="finished" element={<HaveRead />} />
-            <Route path="reviewed" element={<Reviewed />} />
-            <Route path="ebooks" element={<EBooks />} />
+            <Route path="favorites" element={<Private component={Favorites}/>} />
+            <Route path="purchased" element={<Private component={Purchased} />} />
+            <Route path="reading" element={<Private component={Reading} />} />
+            <Route path="finished" element={<Private component={HaveRead} />} />
+            <Route path="reviewed" element={<Private component={Reviewed} />} />
+            <Route path="ebooks" element={<Private component={EBooks} />} />
             <Route path="search" element={<SearchPage />} />
+            <Route path="pendings" element={<Private component={Pending} />} />
             <Route path="book">
-              <Route path=":id" element={<Book />}/>
+              <Route path=":id" element={<Book />} />
             </Route>
           </Route>
         </Routes>

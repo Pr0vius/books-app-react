@@ -105,6 +105,7 @@ import { searchBookshelve, searchByTitle } from "../services/fetch";
 const useFetch = (type = "", query) => {
   const { user } = useContext(userContext);
   const [books, setBooks] = useState([]);
+  const [isLoading, setIsloading] = useState(false);
 
   useEffect(() => {
     const fetchOptions = {
@@ -118,6 +119,7 @@ const useFetch = (type = "", query) => {
           if (data.totalItems > 0) {
             setBooks(data.items);
           }
+          setIsloading(false);
         });
       },
       PURCHASED: () => {
@@ -125,6 +127,7 @@ const useFetch = (type = "", query) => {
           if (data.totalItems > 0) {
             setBooks(data.items);
           }
+          setIsloading(false);
         });
       },
       TOREAD: () => {
@@ -132,6 +135,7 @@ const useFetch = (type = "", query) => {
           if (data.totalItems > 0) {
             setBooks(data.items);
           }
+          setIsloading(false);
         });
       },
       READING: () => {
@@ -139,6 +143,7 @@ const useFetch = (type = "", query) => {
           if (data.totalItems > 0) {
             setBooks(data.items);
           }
+          setIsloading(false);
         });
       },
       FINISHED: () => {
@@ -146,6 +151,7 @@ const useFetch = (type = "", query) => {
           if (data.totalItems > 0) {
             setBooks(data.items);
           }
+          setIsloading(false);
         });
       },
       REVIEWED: () => {
@@ -153,6 +159,7 @@ const useFetch = (type = "", query) => {
           if (data.totalItems > 0) {
             setBooks(data.items);
           }
+          setIsloading(false);
         });
       },
       RECENTS: () => {
@@ -160,6 +167,7 @@ const useFetch = (type = "", query) => {
           if (data.totalItems > 0) {
             setBooks(data.items);
           }
+          setIsloading(false);
         });
       },
       EBOOKS: () => {
@@ -167,6 +175,7 @@ const useFetch = (type = "", query) => {
           if (data.totalItems > 0) {
             setBooks(data.items);
           }
+          setIsloading(false);
         });
       },
       RECOMENDATIONS: () => {
@@ -174,23 +183,27 @@ const useFetch = (type = "", query) => {
           if (data.totalItems > 0) {
             setBooks(data.items);
           }
+          setIsloading(false);
         });
       },
       SEARCH: () => {
-        searchByTitle(query, fetchOptions).then(data => {
+        searchByTitle(query, {}).then(data => {
           if (data.totalItems > 0) {
+            console.log(data);
             setBooks(data.items);
           }
+          setIsloading(false);
         });
       },
     };
 
-    if (user.auth) {
+    if (user.auth || type === "SEARCH") {
+      setIsloading(true);
       action[type]();
     }
   }, [user, type, query]);
 
-  return { books, setBooks };
+  return { books, setBooks, isLoading };
 };
 
 export default useFetch;

@@ -4,14 +4,14 @@ import LoginButton from "../LoginButton";
 import LogoutButton from "../LogoutButton";
 import "./style.css";
 
-const NavUser = () => {
+const NavUser = ({onLogin}) => {
   const { user } = useContext(userContext);
 
   return (
     <div className="nav-user">
       {!user.auth ? (
         <div className="nav-user__container">
-          <LoginButton />
+          <LoginButton onLogin={onLogin} />
         </div>
       ) : (
         <>
